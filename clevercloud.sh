@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 set -x
-npm install
+
 # Add S3 Storage
 mkdir -p ./content/adapters/storage
 cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
@@ -26,7 +26,7 @@ cat <<EOF > config.production.json
 	    "secretAccessKey": "$CELLAR_ADDON_KEY_SECRET",
 	    "region": "US",
 	    "bucket": "blog",
-	    "assetHost": "blog.$CELLAR_ADDON_HOST",
+	    "assetHost": "//blog.$CELLAR_ADDON_HOST",
 	    "endpoint": "$CELLAR_ADDON_HOST"
 	}
     },
