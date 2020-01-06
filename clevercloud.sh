@@ -2,8 +2,11 @@
 set -e
 set -x
 npm install
-mkdir -p ./content/adapters/storage
-cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
+#mkdir -p ./content/adapters/storage
+#cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
+# Copy Theme
+mkdir -p content/themes
+cp -Rf "node_modules/casper" content/themes/
 mkdir ghost # create a folder for a new local instance of Ghost
 cd ghost
 ../node_modules/.bin/ghost install local
