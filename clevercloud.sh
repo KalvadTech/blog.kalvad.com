@@ -26,7 +26,7 @@ cat <<EOF > config.production.json
 	    "secretAccessKey": "$CELLAR_ADDON_KEY_SECRET",
 	    "region": "US",
 	    "bucket": "blog",
-	    "assetHost": "//blog.$CELLAR_ADDON_HOST",
+	    "assetHost": "https://blog.$CELLAR_ADDON_HOST",
 	    "endpoint": "$CELLAR_ADDON_HOST"
 	}
     },
