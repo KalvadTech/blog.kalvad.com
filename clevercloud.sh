@@ -2,9 +2,10 @@
 set -e
 set -x
 npm install
-#mkdir -p ./content/adapters/storage
-#cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
-# Copy Theme
+# Add S3 Storage
+mkdir -p ./content/adapters/storage
+cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
+# Add Theme
 mkdir -p content/themes
 cp -Rf "node_modules/casper" content/themes/
 mkdir ghost # create a folder for a new local instance of Ghost
@@ -17,6 +18,16 @@ cat <<EOF > config.production.json
     "server": {
 	"port": 8080,
 	"host": "0.0.0.0"
+    },
+    "storage": {
+	"active": "s3",
+	"s3": {
+	    "accessKeyId": "$CELLAR_ADDON_KEY_ID",
+	    "secretAccessKey": "$CELLAR_ADDON_KEY_SECRET",
+	    "region": "US",
+	    "bucket": "blog",
+	    "endpoint": "$CELLAR_ADDON_HOST"
+	}
     },
     "database": {
 	"client": "mysql",
