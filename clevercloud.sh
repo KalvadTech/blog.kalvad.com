@@ -4,8 +4,8 @@ set -x
 npm install
 mkdir ghost # create a folder for a new local instance of Ghost
 cd ghost
-./node_modules/.bin/ghost install local
-./node_modules/.bin/ghost stop
+../node_modules/.bin/ghost install local
+../node_modules/.bin/ghost stop
 # generate production config file
 cat <<EOF > config.production.json
 {
