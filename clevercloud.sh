@@ -1,4 +1,5 @@
 #!/bin/sh
+npm install
 mkdir ghost # create a folder for a new local instance of Ghost
 cd ghost
 ./node_modules/.bin/ghost install local
