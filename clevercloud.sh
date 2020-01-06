@@ -2,6 +2,8 @@
 set -e
 set -x
 npm install
+mkdir -p ./content/adapters/storage
+cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
 mkdir ghost # create a folder for a new local instance of Ghost
 cd ghost
 ../node_modules/.bin/ghost install local
@@ -21,10 +23,10 @@ cat <<EOF > config.production.json
 	    "user": "$MYSQL_ADDON_USER",
 	    "password": "$MYSQL_ADDON_PASSWORD",
 	    "database": "$MYSQL_ADDON_DB"
-	}
+	},
 	"pool": {
-	    "min": 1,
-	    "max": 3
+	    "min": 2,
+	    "max": 20
 	}
     },
     "mail": {
