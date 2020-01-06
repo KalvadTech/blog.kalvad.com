@@ -1,4 +1,6 @@
 #!/bin/sh
+set -e
+set -x
 npm install
 mkdir ghost # create a folder for a new local instance of Ghost
 cd ghost
