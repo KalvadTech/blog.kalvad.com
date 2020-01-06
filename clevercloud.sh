@@ -22,6 +22,10 @@ cat <<EOF > config.production.json
 	    "password": "$MYSQL_ADDON_PASSWORD",
 	    "database": "$MYSQL_ADDON_DB"
 	}
+	"pool": {
+	    "min": 1,
+	    "max": 3
+	}
     },
     "mail": {
 	"transport": "Direct"
