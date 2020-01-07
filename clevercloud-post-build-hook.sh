@@ -11,4 +11,4 @@ cd ghost
 ../node_modules/.bin/ghost stop
 # generate config file
 cd ..
-../clevercloud-pre-run-hook.sh
+./clevercloud-pre-run-hook.sh
