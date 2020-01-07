@@ -2,7 +2,7 @@
 set -e
 set -x
 
-cat <<EOF > config.production.json
+cat <<EOF > ghost/config.production.json
 {
     "server": {
 	"port": 8080,
