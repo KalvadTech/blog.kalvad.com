@@ -5,9 +5,6 @@ set -x
 # Add S3 Storage
 mkdir -p ./content/adapters/storage
 cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
-# Add Theme
-mkdir -p content/themes
-cp -Rf "node_modules/casper" content/themes/
 mkdir ghost # create a folder for a new local instance of Ghost
 cd ghost
 ../node_modules/.bin/ghost install local
@@ -25,8 +22,8 @@ cat <<EOF > config.production.json
 	    "accessKeyId": "$CELLAR_ADDON_KEY_ID",
 	    "secretAccessKey": "$CELLAR_ADDON_KEY_SECRET",
 	    "region": "US",
-	    "bucket": "blog",
-	    "assetHost": "https://blog.$CELLAR_ADDON_HOST",
+	    "bucket": "$BUCKET_NAME",
+	    "assetHost": "https://$BUCKET_NAME.$CELLAR_ADDON_HOST",
 	    "endpoint": "$CELLAR_ADDON_HOST"
 	}
     },
@@ -41,11 +38,22 @@ cat <<EOF > config.production.json
 	},
 	"pool": {
 	    "min": 2,
-	    "max": 20
+	    "max": 50
 	}
     },
     "mail": {
-	"transport": "Direct"
+	"transport": "SMTP",
+	"from": "$SMTP_FROM",
+        "options": {
+            "service": "Mailgun",
+            "host": "$SMTP_SERVER",
+            "port": $SMTP_PORT,
+            "secureConnection": true,
+            "auth": {
+		"user": "$SMTP_USER",
+		"pass": "$SMTP_PASSWORD"
+            }
+	}
     },
     "process": "local",
     "logging": {
