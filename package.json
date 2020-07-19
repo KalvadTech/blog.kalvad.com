@@ -7,7 +7,7 @@
     },
     "devDependencies": {},
     "dependencies": {
-        "ghost-cli": "1.13.1",
+        "ghost-cli": "1.14.1",
         "ghost-storage-adapter-s3": "2.8.0"
     }
 }
