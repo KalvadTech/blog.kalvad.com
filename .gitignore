@@ -1,3 +1,4 @@
 .ghost-cli
 current
 versions
+node_modules/
