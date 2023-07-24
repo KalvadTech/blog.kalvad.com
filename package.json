@@ -6,7 +6,7 @@
         "start": "ghost run --dir ghost"
     },
     "engines": {
-        "node": "14"
+        "node": "16"
     },
     "devDependencies": {},
     "dependencies": {
