@@ -1,0 +1,3 @@
+[tools]
+node = ['18']
+python = {version='3.12', virtualenv='env'}
