@@ -2,3 +2,5 @@
 current
 versions
 node_modules/
+env/
+ghost/
