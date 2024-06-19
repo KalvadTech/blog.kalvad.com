@@ -15,7 +15,7 @@ cat <<EOF > ghost/config.production.json
 	    "secretAccessKey": "$CELLAR_ADDON_KEY_SECRET",
 	    "region": "US",
 	    "bucket": "$BUCKET_NAME",
-	    "assetHost": "https://$BUCKET_NAME.$CELLAR_ADDON_HOST",
+	    "assetHost": "$S3_ASSET_HOST",
 	    "endpoint": "$CELLAR_ADDON_HOST"
 	}
     },
