@@ -13,7 +13,7 @@ cat <<EOF > ghost/config.production.json
 	"s3": {
 	    "accessKeyId": "$CELLAR_ADDON_KEY_ID",
 	    "secretAccessKey": "$CELLAR_ADDON_KEY_SECRET",
-	    "region": "US",
+	    "region": "auto",
 	    "bucket": "$BUCKET_NAME",
 	    "assetHost": "$S3_ASSET_HOST",
 	    "endpoint": "$CELLAR_ADDON_HOST"
