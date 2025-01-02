@@ -6,11 +6,11 @@
         "start": "ghost run --dir ghost"
     },
     "engines": {
-        "node": "18"
+        "node": "20"
     },
     "devDependencies": {},
     "dependencies": {
-        "ghost-cli": "1.26.0",
+        "ghost-cli": "1.26.1",
         "ghost-storage-adapter-s3": "2.8.0"
     }
 }
