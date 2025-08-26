@@ -6,7 +6,7 @@
         "start": "ghost run --dir ghost"
     },
     "engines": {
-        "node": "20"
+        "node": "22"
     },
     "dependencies": {
         "clever-tools": "^3.14.0",
