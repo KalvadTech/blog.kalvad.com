@@ -9,8 +9,8 @@
         "node": "22"
     },
     "dependencies": {
-        "clever-tools": "^3.14.0",
-        "ghost-cli": "1.28.3",
+        "clever-tools": "4.5.2",
+        "ghost-cli": "1.28.4",
         "ghost-storage-adapter-s3": "2.8.0"
     }
 }
